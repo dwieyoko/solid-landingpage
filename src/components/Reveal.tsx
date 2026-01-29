@@ -27,7 +27,7 @@ export default function Reveal(props: RevealProps) {
       },
       {
         threshold: props.threshold || 0.1,
-        rootMargin: "0px 0px -50px 0px", // Trigger slightly before full view
+        rootMargin: "0px 0px -150px 0px", // Trigger further into view for better visibility
       }
     );
 

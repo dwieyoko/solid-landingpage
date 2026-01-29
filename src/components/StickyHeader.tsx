@@ -33,7 +33,7 @@ export default function StickyHeader() {
       <header class={`sticky-header ${visible() ? "visible" : ""}`}>
         <div class="sticky-header-content">
           <div class="sticky-logo" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            NatiX
+            <img src="/assets/logo.png" alt="NatiX Logo" class="sticky-logo-img" />
           </div>
           <nav class="sticky-nav">
             <button onClick={() => scrollToSection(".hero-section")}>Beranda</button>
@@ -68,7 +68,7 @@ export default function StickyHeader() {
       {/* Mobile Menu Drawer */}
       <div class={`mobile-menu ${mobileMenuOpen() ? "open" : ""}`}>
         <div class="mobile-menu-header">
-          <div class="mobile-menu-logo">NatiX</div>
+          <img src="/assets/logo.png" alt="NatiX Logo" class="mobile-menu-logo-img" />
           <button class="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
