@@ -35,7 +35,7 @@ export default function Hero() {
           <Reveal>
             <div class="hero-content">
               <div class="logo-wrapper">
-                <img src="/assets/logo.png" alt="NatiX Logo" class="hero-logo" />
+                <img src="/assets/svg/logosvg.svg" alt="NatiX Logo" class="hero-logo" />
               </div>
               <h1 class="hero-title">Satu Sistem, Semua Tertata</h1>
               <p class="hero-subtitle">

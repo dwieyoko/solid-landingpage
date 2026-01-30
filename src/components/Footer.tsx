@@ -4,7 +4,7 @@ export default function Footer() {
       <div class="container footer-container">
         <div class="footer-top">
           <div class="footer-logo">
-            <img src="/assets/logo.png" alt="NatiX Logo" class="footer-logo-img" />
+            <img src="/assets/svg/logosvg.svg" alt="NatiX Logo" class="footer-logo-img" />
           </div>
           <p class="footer-tagline">Satu Sistem, Semua Tertata.</p>
         </div>
@@ -30,7 +30,7 @@ export default function Footer() {
             <span class="footer-item-icon copyright-icon">
                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
             </span>
-            <span>© 2025 NatiX</span>
+            <span>© {new Date().getFullYear()} NatiX</span>
           </div>
         </div>
       </div>

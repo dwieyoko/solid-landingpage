@@ -33,7 +33,7 @@ export default function StickyHeader() {
       <header class={`sticky-header ${visible() ? "visible" : ""}`}>
         <div class="sticky-header-content">
           <div class="sticky-logo" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <img src="/assets/logo.png" alt="NatiX Logo" class="sticky-logo-img" />
+            <img src="/assets/svg/logosvg.svg" alt="NatiX Logo" class="sticky-logo-img" />
           </div>
           <nav class="sticky-nav">
             <button onClick={() => scrollToSection(".hero-section")}>Beranda</button>
