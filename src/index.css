@@ -47,8 +47,8 @@ html {
 .reveal-hidden {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal-visible {
@@ -60,22 +60,22 @@ html {
 .reveal-fade-left {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal-fade-right {
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal-scale-up {
   opacity: 0;
   transform: scale(0.9);
-  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal-fade-left.reveal-visible,
@@ -89,7 +89,7 @@ html {
 .stagger-children > * {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
 }
 
 .stagger-children.reveal-visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
@@ -1483,6 +1483,7 @@ img[loading="lazy"].loaded {
   position: relative;
   overflow: hidden;
   display: inline-block;
+  cursor: pointer;
 }
 
 .sticky-cta::before {
@@ -1531,6 +1532,7 @@ img[loading="lazy"].loaded {
   position: relative;
   overflow: hidden;
   display: inline-block;
+  cursor: pointer;
 }
 
 .sticky-cta-outline::before {
