@@ -34,9 +34,6 @@ export default function Hero() {
         <div class="hero-grid">
           <Reveal>
             <div class="hero-content">
-              <div class="logo-wrapper">
-                <img src="/assets/svg/logosvg.svg" alt="NatiX Logo" class="hero-logo" />
-              </div>
               <h1 class="hero-title">Satu Sistem, Semua Tertata</h1>
               <p class="hero-subtitle">
                 Platform ERP terintegrasi untuk sekolah dan lembaga pendidikan.
@@ -44,10 +41,20 @@ export default function Hero() {
                 satu sistem modern yang mudah digunakan.
               </p>
               <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">
+                <a 
+                  href="https://wa.me/6289525841982?text=Halo%2C%20saya%20ingin%20meminta%20demo%20NatiX" 
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Minta Demo
                 </a>
-                <a href="#" class="btn btn-outline-light">
+                <a 
+                  href="https://wa.me/6289525841982?text=Halo%2C%20saya%20ingin%20konsultasi%20gratis%20tentang%20NatiX" 
+                  class="btn btn-outline-light"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Konsultasi Gratis
                 </a>
               </div>

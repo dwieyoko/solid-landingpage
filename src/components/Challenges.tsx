@@ -28,25 +28,25 @@ export default function Challenges() {
             <div class="challenges-cards">
               <article class="challenge-card">
                 <div class="card-illustration">
-                  <img src="/assets/svg/icon_data_tidak_sinkron.svg" alt="Data Sync Icon" />
+                  <img src="/assets/challenge_data.png" alt="Data Sync Icon" />
                 </div>
                 <h3>Data tersebar &<br/>tidak sinkron</h3>
               </article>
               <article class="challenge-card">
                 <div class="card-illustration">
-                  <img src="/assets/svg/icon_administrasi_manual.svg" alt="Manual Admin Icon" />
+                  <img src="/assets/challenge_administrasi.png" alt="Manual Admin Icon" />
                 </div>
                 <h3>Administrasi manual<br/>yang melelahkan</h3>
               </article>
               <article class="challenge-card">
                 <div class="card-illustration">
-                  <img src="/assets/svg/icon_monitoring_tidak_realtime.svg" alt="Student Monitoring Icon" />
+                  <img src="/assets/challenge_monitoring.png" alt="Student Monitoring Icon" />
                 </div>
                 <h3>Monitoring siswa<br/>belum real-time</h3>
               </article>
               <article class="challenge-card">
                 <div class="card-illustration">
-                  <img src="/assets/svg/icon_laporan_lambat.svg" alt="Report Errors Icon" />
+                  <img src="/assets/challenge_laporan.png" alt="Report Errors Icon" />
                 </div>
                 <h3>Laporan lambat<br/>& rawan kesalahan</h3>
               </article>
@@ -56,7 +56,7 @@ export default function Challenges() {
           <Reveal delay={400}>
             <div class="challenges-dashboard-preview">
               <img
-                src="/assets/dashboard_laptop_phone.png"
+                src="/assets/section2_dashboard.png"
                 alt="Dashboard Preview"
                 class="dashboard-img-actual"
               />

@@ -1,11 +1,11 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
 
 export default function StickyHeader() {
-  const [visible, setVisible] = createSignal(false);
+  const [visible, setVisible] = createSignal(true);
   const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
 
   const handleScroll = () => {
-    setVisible(window.scrollY > 300);
+    setVisible(window.scrollY >= 0);
   };
 
   onMount(() => {
@@ -42,8 +42,7 @@ export default function StickyHeader() {
             <button onClick={() => scrollToSection(".benefits-section")}>Keunggulan</button>
           </nav>
           <div class="sticky-buttons">
-            <a href="#" class="sticky-cta">Minta Demo</a>
-            <a href="#" class="sticky-cta-outline">Konsultasi Gratis</a>
+            <a href="#" class="sticky-cta-outline" target="_blank" rel="noopener noreferrer">Login</a>
           </div>
           
           {/* Hamburger Button */}
@@ -83,8 +82,7 @@ export default function StickyHeader() {
           <button onClick={() => scrollToSection(".benefits-section")}>Keunggulan</button>
         </nav>
         <div class="mobile-menu-buttons">
-          <a href="#" class="mobile-cta">Minta Demo</a>
-          <a href="#" class="mobile-cta-outline">Konsultasi Gratis</a>
+          <a href="#" class="mobile-cta-outline" target="_blank" rel="noopener noreferrer">Login</a>
         </div>
       </div>
     </>

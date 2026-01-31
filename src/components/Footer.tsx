@@ -19,12 +19,17 @@ export default function Footer() {
             <span>Magelang, Jawa Tengah</span>
           </div>
           <span class="footer-separator">|</span>
-          <div class="footer-item">
+          <a 
+            href="https://wa.me/6289525841982?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20NatiX" 
+            class="footer-item footer-item-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span class="footer-item-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </span>
             <span>Konsultasi via Whatsapp</span>
-          </div>
+          </a>
           <span class="footer-separator">|</span>
           <div class="footer-item">
             <span class="footer-item-icon copyright-icon">
