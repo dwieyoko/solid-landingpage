@@ -1540,11 +1540,12 @@ img[loading="lazy"].loaded {
 .sticky-header-content {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 8px 24px; /* Reduced vertical padding for compact header */
+  padding: 10px 24px; /* Constant compact padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+/* Removed .sticky-header.scrolled .sticky-header-content rule */
 
 .sticky-logo {
   font-size: 1.5rem;
@@ -1560,6 +1561,16 @@ img[loading="lazy"].loaded {
 
 .sticky-logo:hover {
   transform: scale(1.05);
+}
+
+.sticky-logo-img {
+  height: 48px; /* Larger initially */
+  width: auto;
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sticky-header.scrolled .sticky-logo-img {
+  height: 40px; /* Smaller when scrolled */
 }
 
 .sticky-nav {
