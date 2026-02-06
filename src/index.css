@@ -1518,23 +1518,38 @@ img[loading="lazy"].loaded {
 
 /* 4. Sticky Header */
 .sticky-header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: none; /* No shadow by default */
+  left: 0;
+  top: 0;
   z-index: 1000;
-  transform: translateY(0);
-  opacity: 1;
-  transition: box-shadow 0.3s ease, background 0.3s ease; /* Smooth transition */
   font-family: var(--font-body);
 }
 
-.sticky-header.scrolled {
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); /* Shadow appears when scrolled */
+/* Static Header (Initial State) */
+.sticky-header.static {
+  position: absolute;
+  background: transparent;
+  box-shadow: none;
+  z-index: 10;
+}
+
+/* Fixed Header (Scrolled State) */
+.sticky-header.fixed {
+  position: fixed;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 249, 255, 0.95) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  z-index: 20;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
+}
+
+.sticky-header.fixed.visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .sticky-header-content {
@@ -1564,14 +1579,10 @@ img[loading="lazy"].loaded {
 }
 
 .sticky-logo-img {
-  height: 48px; /* Larger initially */
+  height: 40px; /* Constant size */
   width: auto;
-  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.sticky-header.scrolled .sticky-logo-img {
-  height: 40px; /* Smaller when scrolled */
-}
+/* Removed .sticky-header.scrolled .sticky-logo-img rule */
 
 .sticky-nav {
   display: flex;

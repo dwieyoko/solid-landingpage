@@ -1,15 +1,71 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
 
+const HeaderContent = (props: {
+  mobileMenuOpen: () => boolean;
+  toggleMobileMenu: () => void;
+  scrollToSection: (id: string) => void;
+}) => {
+  return (
+    <div class="sticky-header-content">
+      <div
+        class="sticky-logo"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        <img
+          src="/assets/svg/logosvg.svg"
+          alt="NatiX Logo"
+          class="sticky-logo-img"
+        />
+      </div>
+      <nav class="sticky-nav">
+        <button onClick={() => props.scrollToSection(".hero-section")}>
+          Beranda
+        </button>
+        <button onClick={() => props.scrollToSection(".challenges-section")}>
+          Tantangan
+        </button>
+        <button onClick={() => props.scrollToSection(".use-cases-section")}>
+          Solusi
+        </button>
+        <button onClick={() => props.scrollToSection(".benefits-section")}>
+          Keunggulan
+        </button>
+      </nav>
+      <div class="sticky-buttons">
+        <a
+          href="#"
+          class="sticky-cta-outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Login
+        </a>
+      </div>
+
+      {/* Hamburger Button */}
+      <button
+        class={`hamburger-btn ${props.mobileMenuOpen() ? "open" : ""}`}
+        onClick={props.toggleMobileMenu}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  );
+};
+
 export default function StickyHeader() {
   const [isScrolled, setIsScrolled] = createSignal(false);
   const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
 
+  // Scroll threshold > 100px for transition
   const handleScroll = () => {
-    setIsScrolled(window.scrollY > 0);
+    setIsScrolled(window.scrollY > 100);
   };
 
   onMount(() => {
-    // Initial check
     handleScroll();
     window.addEventListener("scroll", handleScroll);
   });
@@ -32,54 +88,22 @@ export default function StickyHeader() {
 
   return (
     <>
-      <header class={`sticky-header ${isScrolled() ? "scrolled" : ""}`}>
-        <div class="sticky-header-content">
-          <div
-            class="sticky-logo"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <img
-              src="/assets/svg/logosvg.svg"
-              alt="NatiX Logo"
-              class="sticky-logo-img"
-            />
-          </div>
-          <nav class="sticky-nav">
-            <button onClick={() => scrollToSection(".hero-section")}>
-              Beranda
-            </button>
-            <button onClick={() => scrollToSection(".challenges-section")}>
-              Tantangan
-            </button>
-            <button onClick={() => scrollToSection(".use-cases-section")}>
-              Solusi
-            </button>
-            <button onClick={() => scrollToSection(".benefits-section")}>
-              Keunggulan
-            </button>
-          </nav>
-          <div class="sticky-buttons">
-            <a
-              href="#"
-              class="sticky-cta-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Login
-            </a>
-          </div>
+      {/* 1. Static Header: Always at the top, scrolls away */}
+      <header class="sticky-header static">
+        <HeaderContent
+          mobileMenuOpen={mobileMenuOpen}
+          toggleMobileMenu={toggleMobileMenu}
+          scrollToSection={scrollToSection}
+        />
+      </header>
 
-          {/* Hamburger Button */}
-          <button
-            class={`hamburger-btn ${mobileMenuOpen() ? "open" : ""}`}
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
+      {/* 2. Fixed Header: Slides in when scrolled */}
+      <header class={`sticky-header fixed ${isScrolled() ? "visible" : ""}`}>
+        <HeaderContent
+          mobileMenuOpen={mobileMenuOpen}
+          toggleMobileMenu={toggleMobileMenu}
+          scrollToSection={scrollToSection}
+        />
       </header>
 
       {/* Mobile Menu Overlay */}
