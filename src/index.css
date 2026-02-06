@@ -1525,18 +1525,16 @@ img[loading="lazy"].loaded {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); /* Always show shadow */
+  box-shadow: none; /* No shadow by default */
   z-index: 1000;
   transform: translateY(0);
   opacity: 1;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: box-shadow 0.3s ease, background 0.3s ease; /* Smooth transition */
   font-family: var(--font-body);
 }
 
-.sticky-header.hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
+.sticky-header.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); /* Shadow appears when scrolled */
 }
 
 .sticky-header-content {

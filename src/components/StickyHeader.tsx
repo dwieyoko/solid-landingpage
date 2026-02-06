@@ -1,12 +1,11 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
 
 export default function StickyHeader() {
-  const [isVisible, setIsVisible] = createSignal(true);
+  const [isScrolled, setIsScrolled] = createSignal(false);
   const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
 
   const handleScroll = () => {
-    // Show header only when in Hero section (viewport height)
-    setIsVisible(window.scrollY < window.innerHeight);
+    setIsScrolled(window.scrollY > 0);
   };
 
   onMount(() => {
@@ -33,7 +32,7 @@ export default function StickyHeader() {
 
   return (
     <>
-      <header class={`sticky-header ${!isVisible() ? "hidden" : ""}`}>
+      <header class={`sticky-header ${isScrolled() ? "scrolled" : ""}`}>
         <div class="sticky-header-content">
           <div
             class="sticky-logo"
