@@ -1,11 +1,12 @@
 import { createSignal, onMount, onCleanup } from "solid-js";
 
 export default function StickyHeader() {
-  const [visible, setVisible] = createSignal(true);
+  const [visible, setVisible] = createSignal(false); // Start hidden
   const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
 
   const handleScroll = () => {
-    setVisible(window.scrollY >= 0);
+    // Show header only after scrolling past 100px
+    setVisible(window.scrollY > 100);
   };
 
   onMount(() => {
@@ -32,21 +33,43 @@ export default function StickyHeader() {
     <>
       <header class={`sticky-header ${visible() ? "visible" : ""}`}>
         <div class="sticky-header-content">
-          <div class="sticky-logo" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <img src="/assets/svg/logosvg.svg" alt="NatiX Logo" class="sticky-logo-img" />
+          <div
+            class="sticky-logo"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <img
+              src="/assets/svg/logosvg.svg"
+              alt="NatiX Logo"
+              class="sticky-logo-img"
+            />
           </div>
           <nav class="sticky-nav">
-            <button onClick={() => scrollToSection(".hero-section")}>Beranda</button>
-            <button onClick={() => scrollToSection(".challenges-section")}>Tantangan</button>
-            <button onClick={() => scrollToSection(".use-cases-section")}>Solusi</button>
-            <button onClick={() => scrollToSection(".benefits-section")}>Keunggulan</button>
+            <button onClick={() => scrollToSection(".hero-section")}>
+              Beranda
+            </button>
+            <button onClick={() => scrollToSection(".challenges-section")}>
+              Tantangan
+            </button>
+            <button onClick={() => scrollToSection(".use-cases-section")}>
+              Solusi
+            </button>
+            <button onClick={() => scrollToSection(".benefits-section")}>
+              Keunggulan
+            </button>
           </nav>
           <div class="sticky-buttons">
-            <a href="#" class="sticky-cta-outline" target="_blank" rel="noopener noreferrer">Login</a>
+            <a
+              href="#"
+              class="sticky-cta-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Login
+            </a>
           </div>
-          
+
           {/* Hamburger Button */}
-          <button 
+          <button
             class={`hamburger-btn ${mobileMenuOpen() ? "open" : ""}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
@@ -59,7 +82,7 @@ export default function StickyHeader() {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         class={`mobile-menu-overlay ${mobileMenuOpen() ? "open" : ""}`}
         onClick={() => setMobileMenuOpen(false)}
       ></div>
@@ -67,22 +90,54 @@ export default function StickyHeader() {
       {/* Mobile Menu Drawer */}
       <div class={`mobile-menu ${mobileMenuOpen() ? "open" : ""}`}>
         <div class="mobile-menu-header">
-          <img src="/assets/svg/logosvg.svg" alt="NatiX Logo" class="mobile-menu-logo-img" />
-          <button class="mobile-menu-close" onClick={() => setMobileMenuOpen(false)}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <img
+            src="/assets/svg/logosvg.svg"
+            alt="NatiX Logo"
+            class="mobile-menu-logo-img"
+          />
+          <button
+            class="mobile-menu-close"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
         </div>
         <nav class="mobile-menu-nav">
-          <button onClick={() => scrollToSection(".hero-section")}>Beranda</button>
-          <button onClick={() => scrollToSection(".challenges-section")}>Tantangan</button>
-          <button onClick={() => scrollToSection(".use-cases-section")}>Solusi</button>
-          <button onClick={() => scrollToSection(".benefits-section")}>Keunggulan</button>
+          <button onClick={() => scrollToSection(".hero-section")}>
+            Beranda
+          </button>
+          <button onClick={() => scrollToSection(".challenges-section")}>
+            Tantangan
+          </button>
+          <button onClick={() => scrollToSection(".use-cases-section")}>
+            Solusi
+          </button>
+          <button onClick={() => scrollToSection(".benefits-section")}>
+            Keunggulan
+          </button>
         </nav>
         <div class="mobile-menu-buttons">
-          <a href="#" class="mobile-cta-outline" target="_blank" rel="noopener noreferrer">Login</a>
+          <a
+            href="#"
+            class="mobile-cta-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Login
+          </a>
         </div>
       </div>
     </>

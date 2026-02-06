@@ -28,7 +28,10 @@ export default function Footer() {
             <span class="footer-item-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </span>
-            <span>Konsultasi via Whatsapp</span>
+            <span class="footer-item-text">
+              <span>Konsultasi via Whatsapp</span>
+              <span class="footer-phone">0895 2584 1982</span>
+            </span>
           </a>
           <span class="footer-separator">|</span>
           <div class="footer-item">
