@@ -1528,7 +1528,10 @@ img[loading="lazy"].loaded {
 /* Static Header (Initial State) */
 .sticky-header.static {
   position: absolute;
-  background: transparent;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 249, 255, 0.95) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: none;
   z-index: 10;
 }
@@ -1563,13 +1566,8 @@ img[loading="lazy"].loaded {
 /* Removed .sticky-header.scrolled .sticky-header-content rule */
 
 .sticky-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  font-family: var(--font-heading);
-  background: linear-gradient(135deg, var(--primary-blue) 0%, #00a8ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  align-items: center; /* Vertical center */
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -1579,8 +1577,9 @@ img[loading="lazy"].loaded {
 }
 
 .sticky-logo-img {
-  height: 40px; /* Constant size */
+  height: 50px; /* Bigger and sharper */
   width: auto;
+  display: block; /* Removes bottom spacing */
 }
 /* Removed .sticky-header.scrolled .sticky-logo-img rule */
 

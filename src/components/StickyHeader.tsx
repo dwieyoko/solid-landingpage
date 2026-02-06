@@ -60,9 +60,9 @@ export default function StickyHeader() {
   const [isScrolled, setIsScrolled] = createSignal(false);
   const [mobileMenuOpen, setMobileMenuOpen] = createSignal(false);
 
-  // Scroll threshold > 100px for transition
+  // Scroll threshold > 0px for immediate transition
   const handleScroll = () => {
-    setIsScrolled(window.scrollY > 100);
+    setIsScrolled(window.scrollY > 0);
   };
 
   onMount(() => {
